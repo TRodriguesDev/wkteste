@@ -1,0 +1,51 @@
+unit uControllerConn;
+
+interface
+
+uses SysUtils, uDAOConn;
+
+Type
+
+  TControllerConn = class
+    private
+      constructor Create;
+      destructor Destroy; Override;
+    public
+      class function getInstance : TControllerConn;
+
+  end;
+
+implementation
+
+var
+  instanciaBD : TControllerConn;
+
+{ TControllerConn }
+
+constructor TControllerConn.Create;
+begin
+  inherited Create;
+end;
+
+destructor TControllerConn.Destroy;
+begin
+
+  inherited;
+end;
+
+class function TControllerConn.getInstance: TControllerConn;
+begin
+  if instanciaBD = nil then
+    instanciaBD := TControllerConn.Create;
+
+  Result := instanciaBD;
+end;
+
+initialization
+  instanciaBD := nil
+
+finalization
+  if instanciaBD <> nil then
+    instanciaBD.Free;
+
+end.

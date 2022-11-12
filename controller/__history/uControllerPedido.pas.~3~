@@ -1,0 +1,48 @@
+unit uControllerPedido;
+
+interface
+
+uses FireDAC.Comp.Client, uMPedido, SysUtils;
+
+Type
+  TControllerPedido = class
+  private
+    fMPedido: TMPedido;
+
+    public
+      property MPedido : TMPedido read fMPedido write fMPedido;
+
+      function persistir: Boolean;
+      function selecionar: TFDQuery;
+
+      constructor Create;
+      destructor destroy; override;
+  end;
+
+implementation
+
+{ TControllerPedido }
+
+constructor TControllerPedido.Create;
+begin
+  fMPedido := TMPedido.create;
+  inherited Create;
+end;
+
+destructor TControllerPedido.destroy;
+begin
+  Freeandnil(FMPedido);
+  inherited;
+end;
+
+function TControllerPedido.persistir: Boolean;
+begin
+  result := fMPedido.persistir;
+end;
+
+function TControllerPedido.selecionar: TFDQuery;
+begin
+  result := fMPedido.selecionar;
+end;
+
+end.

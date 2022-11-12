@@ -1,0 +1,84 @@
+unit uDAOPedido;
+
+interface
+
+uses
+  FireDAC.Comp.Client, SysUtils, uControllerConn, uMPedido;
+
+Type
+  TDAOPedidos = class
+    private
+    protected
+    public
+      function selecionar : TFDQuery;
+      function incluir (MPedido : TMPedido) : Boolean;
+      function excluir (MPedido : TMPedido) : Boolean;
+      function alterar (MPedido : TMPedido) : Boolean;
+  end;
+
+
+implementation
+
+{ TMPedidos }
+
+{
+constructor TMPedidos.Create(Conn: TFDConnection);
+begin
+
+end;
+
+destructor TMPedidos.Destroy;
+begin
+
+  inherited;
+end;
+}
+{ TMPedidos }
+
+function TDAOPedidos.alterar(MPedido: TMPedido): Boolean;
+begin
+  //
+end;
+
+function TDAOPedidos.excluir(MPedido: TMPedido): Boolean;
+var
+  qryPedido : TFDQuery;
+begin
+  qryPedido := TControllerConn.getInstance().daoConn.novaQuery;
+  Try
+    try
+      qryPedido.ExecSQL('DELETE FROM pedidos WHERE IDPEDIDO = :Codigo',[MPedido.IDPedido]);
+      result := True;
+    except
+      result := False;
+    end;
+  Finally
+    qryPedido.DisposeOf;
+  End;
+end;
+
+function TDAOPedidos.incluir(MPedido: TMPedido): Boolean;
+var
+  qryPedido : TFDQuery;
+begin
+  qryPedido := TControllerConn.getInstance().daoConn.novaQuery;
+  Try
+    try
+      qryPedido.ExecSQL('INSERT INTO pedidos (DTE_PED, CLI_PED, VLTOT_PED)');
+      qryPedido.ExecSQL('VALUES (:DTE_PED, :CLI_PED, :VLTOT_PED)',[MPedido.Dte_Ped,MPedido.Cli_Ped,MPedido.Vltot_ped]);
+      result := True;
+    except
+      result := False;
+    end;
+  Finally
+    qryPedido.DisposeOf;
+  End;
+end;
+
+
+function TDAOPedidos.selecionar: TFDQuery;
+begin
+  //
+end;
+
+end.

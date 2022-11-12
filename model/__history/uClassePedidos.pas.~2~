@@ -1,0 +1,66 @@
+unit uClassePedidos;
+
+interface
+
+uses
+  FireDAC.Comp.Client, SysUtils, uControllerConn;
+
+Type
+  TMPedidos = class
+    private
+      FConn       : TFDConnection;
+      FIDPedido   : Integer;
+      FDte_Ped    : TDateTime;
+      FCli_Ped    : Integer;
+      FVltot_ped  : Double;
+    public
+
+      property Conn       : TFDConnection read FConn write FConn;
+      property IDPedido   : Integer read FIDPedido write FIDPedido;
+      property Dte_Ped    : TDateTime read FDte_Ped write FDte_Ped;
+      property Cli_Ped    : Integer read FCli_Ped write FCli_Ped;
+      property Vltot_ped  : Double read FVltot_ped write FVltot_ped;
+
+      function persistir : Boolean;
+      //constructor Create(Conn: TFDConnection);
+      //destructor Destroy ; Override;
+  end;
+
+
+implementation
+
+{ TMPedidos }
+
+{
+constructor TMPedidos.Create(Conn: TFDConnection);
+begin
+
+end;
+
+destructor TMPedidos.Destroy;
+begin
+
+  inherited;
+end;
+}
+{ TMPedidos }
+
+function TMPedidos.persistir: Boolean;
+var
+  qryPedido : TFDQuery;
+begin
+  qryPedido := TControllerConn.getInstance().daoConn.novaQuery;
+  Try
+    try
+      qryPedido.ExecSQL('INSERT INTO pedidos ()');
+      qryPedido.ExecSQL('VALUES ()');
+    except
+      //
+    end;
+  Finally
+    qryPedido.DisposeOf;
+  End;
+
+end;
+
+end.

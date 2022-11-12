@@ -1,0 +1,30 @@
+unit uMItemPedido;
+
+interface
+
+uses
+  FireDAC.Comp.Client, SysUtils, uControllerConn;
+
+Type
+  TMItemPedido = class
+    private
+      FConn         : TFDConnection;
+      FIDItem       : Integer;
+      FNumPed_Item  : Integer;
+      FCodProd_Item : Integer;
+      FQtdProd_Item : Double;
+      FVlUnit_Item  : Double;
+      FVltot_Item   : Double;
+    public
+
+      property Conn       : TFDConnection read FConn write FConn;
+      property IDItem       : Integer read FIDItem       write FIDItem;
+      property NumPed_Item  : Integer read FNumPed_Item  write FNumPed_Item;
+      property CodProd_Item : Integer read FCodProd_Item write FCodProd_Item;
+      property QtdProd_Item : Double read  FQtdProd_Item write FQtdProd_Item;
+      property VlUnit_Item  : Double read  FVlUnit_Item  write FVlUnit_Item;
+      property Vltot_Item   : Double read  FVltot_Item   write FVltot_Item;
+
+  end;
+implementation
+end.
