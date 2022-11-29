@@ -21,7 +21,7 @@ object FrmMain: TFrmMain
     Top = 20
     Width = 667
     Height = 349
-    ActivePage = TabListaPeds
+    ActivePage = Pedido
     Align = alClient
     TabOrder = 0
     object TabListaPeds: TTabSheet
@@ -372,6 +372,7 @@ object FrmMain: TFrmMain
           Width = 38
           Height = 13
           Caption = 'Produto'
+          FocusControl = edtNumProd
         end
         object Label7: TLabel
           Left = 337
@@ -379,6 +380,7 @@ object FrmMain: TFrmMain
           Width = 22
           Height = 13
           Caption = 'Qtd.'
+          FocusControl = edtQuant
         end
         object Label8: TLabel
           Left = 400
@@ -386,6 +388,7 @@ object FrmMain: TFrmMain
           Width = 34
           Height = 13
           Caption = 'Vl. Unit'
+          FocusControl = edtValUnit
         end
         object Label9: TLabel
           Left = 483
@@ -393,6 +396,7 @@ object FrmMain: TFrmMain
           Width = 24
           Height = 13
           Caption = 'Total'
+          FocusControl = edtValTotal
         end
         object btnAddItem: TSpeedButton
           Left = 595

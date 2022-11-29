@@ -316,6 +316,8 @@ Var
   end;
 
   procedure gravaprodutosdopedido(tp: string);
+  var
+    i: Integer;
   begin
     controllerItem := TControllerItemPedido.Create;
     try
@@ -338,8 +340,23 @@ Var
     finally
       if controllerItem.persistir then
         vGravouItem := True
-      else
+      else begin
+        //Validacao sera util apenas se resolver salvar item a item direto no banco de dados, como esta na memTab, nao retornara erro
+        {
+        if controllerItem.MItemPedido.MsgAlerta = '' then
+          messagebox(application.Handle,Pchar('Ocorreu um erro ao tentar gravar ' + FDMemTabItens.FieldByName('NomProd').asstring), 'ERRO', mb_ok+MB_SYSTEMMODAL)
+        else begin
+          for i := 0 to ComponentCount - 1 do
+          begin
+            if (Components[i] is TLabeledEdit) and ((Components[i] as TLabeledEdit).Tag = 1) then
+              (Components[i] as TLabeledEdit).Color := $00bbbbff;
+          end;
+          messagebox(application.Handle,Pchar(controllerItem.MItemPedido.MsgAlerta), 'ERRO', mb_ok+MB_SYSTEMMODAL);
+        end;
+        }
         vGravouItem := False;
+
+      end;
     end;
   end;
 
@@ -606,7 +623,7 @@ Var
   qryPedidos          : TFDQuery;
 begin
   controllerPedido  := TControllerPedido.Create;
-  qryPedidos        := TFDQuery.Create(nil);
+  qryPedidos        := TFDQuery.Create(FrmMain);
   try
     qryPedidos    := ControllerPedido.selecionar(0);
     try

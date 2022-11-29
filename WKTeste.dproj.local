@@ -11,12 +11,12 @@
     <Transaction>2022/10/24 14:34:33.000.780,=D:\ProjetosMult\Unit1.pas</Transaction>
     <Transaction>2022/10/24 14:34:58.000.009,=D:\ProjetosMult\Unit1.pas</Transaction>
     <Transaction>2022/11/08 17:18:47.000.698,=D:\ProjetosMult\Unit1.pas</Transaction>
-    <Transaction>2022/11/08 17:20:46.000.428,D:\ProjetosMult\Unit1.pas=D:\WKTeste\view\uFrmMain.pas</Transaction>
     <Transaction>2022/11/08 17:20:46.000.428,D:\ProjetosMult\Unit1.dfm=D:\WKTeste\view\uFrmMain.dfm</Transaction>
+    <Transaction>2022/11/08 17:20:46.000.428,D:\ProjetosMult\Unit1.pas=D:\WKTeste\view\uFrmMain.pas</Transaction>
     <Transaction>2022/11/08 17:21:29.000.778,D:\ProjetosMult\Project1.dproj=D:\WKTeste\WKTeste.dproj</Transaction>
     <Transaction>2022/11/08 17:23:31.000.134,=D:\WKTeste\Unit1.pas</Transaction>
-    <Transaction>2022/11/08 17:27:28.000.483,D:\WKTeste\Unit1.pas=D:\WKTeste\view\uPedVendas.pas</Transaction>
     <Transaction>2022/11/08 17:27:28.000.483,D:\WKTeste\Unit1.dfm=D:\WKTeste\view\uPedVendas.dfm</Transaction>
+    <Transaction>2022/11/08 17:27:28.000.483,D:\WKTeste\Unit1.pas=D:\WKTeste\view\uPedVendas.pas</Transaction>
     <Transaction>2022/11/09 18:15:33.000.780,=D:\WKTeste\Unit1.pas</Transaction>
     <Transaction>2022/11/09 18:17:58.000.364,=D:\WKTeste\Unit2.pas</Transaction>
     <Transaction>2022/11/09 18:37:11.000.740,=D:\WKTeste\Unit1.pas</Transaction>
@@ -38,8 +38,28 @@
     <Transaction>2022/11/10 12:16:13.000.524,D:\WKTeste\controller\uControllerItemPedido.pas=D:\WKTeste\Unit1.pas</Transaction>
     <Transaction>2022/11/10 15:43:31.000.058,=D:\WKTeste\Unit1.pas</Transaction>
     <Transaction>2022/11/10 15:45:31.000.433,D:\WKTeste\model\uEnumerador.pas=D:\WKTeste\Unit1.pas</Transaction>
+    <Transaction>2022/11/20 05:10:47.000.204,=D:\WKTeste\Unit1.pas</Transaction>
+    <Transaction>2022/11/20 05:12:37.000.275,D:\WKTeste\Unit1.pas=D:\WKTeste\model\uValidarClasses.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile iOSSimulator="iPhone5"/>
 	</ActiveMobileDevice>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="controller"/>
+    <File Path="controller\uControllerConn.pas"/>
+    <File Path="controller\uControllerItemPedido.pas"/>
+    <File Path="controller\uControllerPedido.pas"/>
+    <File Path="dao"/>
+    <File Path="dao\uDAOConn.pas"/>
+    <File Path="DAO\uDAOItemPedido.pas"/>
+    <File Path="DAO\uDAOPedido.pas"/>
+    <File Path="model"/>
+    <File Path="model\uEnumerador.pas"/>
+    <File Path="model\uMItemPedido.pas"/>
+    <File Path="model\uMPedido.pas"/>
+    <File Path="model\uValidarClasses.pas"/>
+    <File Path="view"/>
+    <File Path="view\uFrmMain.pas"/>
+    <File Path="view\uFrmMain.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>
